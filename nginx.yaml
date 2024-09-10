@@ -1,0 +1,15 @@
+- name: install nginx
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: nginx installation
+    package:
+      name: nginx
+      state: present
+
+  - name: start and enable nginx
+    service:
+      name: nginx
+      state: started
+      enabled: yes
